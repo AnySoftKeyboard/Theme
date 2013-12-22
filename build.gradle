@@ -1,0 +1,116 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.7.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+
+
+def String getInputFromConsoleIfMissing(Properties props, String propKey, String propInputMessage) {
+    def propValue = props[propKey]
+    if (propValue == null || propValue == '') {
+        def con = System.console();
+        if (con != null){
+            propValue = con.readLine("\n"+propInputMessage+": ")
+        }
+    }
+
+    return propValue
+}
+
+def boolean isEmpty(String value) {
+    if (value == null)
+        return true
+    else if (value == '')
+        return true
+    else
+        return false
+}
+
+def String getVersionPatchBuild() {
+    DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd")
+    Date date = new Date()
+    return dateFormat.format(date)
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.0"
+
+    defaultConfig {
+        minSdkVersion 4
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0."+getVersionPatchBuild()
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+
+    signingConfigs {
+        release {
+            //https://gist.github.com/gabrielemariotti/6856974#file-build-gradle
+            def String keystore_file
+            def String keystore_password
+            def String key_alias
+            def String key_alias_password
+            def Properties props = new Properties()
+            def propFile = new File(projectDir, 'local.signing.properties')
+            if (propFile.canRead()){
+                props.load(new FileInputStream(propFile))
+            } else {
+                println 'local.signing.properties file was not found. Using debug signing configuration.'
+            }
+
+            keystore_file = getInputFromConsoleIfMissing(props, 'STORE_FILE', 'Key-Store file name')
+            keystore_password = getInputFromConsoleIfMissing(props, 'STORE_PASSWORD', 'Key-Store file password')
+            key_alias = getInputFromConsoleIfMissing(props, 'KEY_ALIAS', 'App key alias')
+            key_alias_password = getInputFromConsoleIfMissing(props, 'KEY_PASSWORD', 'App key password')
+
+            if (    isEmpty(keystore_file) || isEmpty(keystore_password) ||
+                    isEmpty(key_alias) || isEmpty(key_alias_password)) {
+                //missing signing details, so I'll use debug signingConfigs details.
+                println "Missing release build-type signing details, I'll use DEBUG signing for the release."
+                storeFile signingConfigs.debug.storeFile
+                storePassword signingConfigs.debug.storePassword
+                keyAlias signingConfigs.debug.keyAlias
+                keyPassword signingConfigs.debug.keyPassword
+            } else {
+                println 'For signing, will use key-store file '+keystore_file+', with key '+key_alias
+                storeFile file(keystore_file)
+                storePassword keystore_password
+                keyAlias key_alias
+                keyPassword key_alias_password
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            zipAlign true
+
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'net.evendanan.anysoftkeyboard:api:1.2.0@aar'
+}

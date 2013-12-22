@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Example AnySoftKeyboard Theme</string>
+	<string name="keyboard_theme_name">Example Theme</string>
+	<string name="keyboard_theme_description">AnySoftKeyboard theme example, similar to Ice Cream Sandwich keyboard look</string>
+	
+</resources>
