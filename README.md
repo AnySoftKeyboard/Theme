@@ -7,26 +7,26 @@ This is an example of an AnySoftKeyboard Theme. Please follow the TODO list to c
 
 To-Do:
 ------
-- [ ] Change package name in _AndroidManifest.xml_
-- [ ] Change the package (and folder name) of the Java class _KeyboardThemeReceiver.java_
-- [ ] Change the App name, theme name and description at _/values/strings.xml_
-- [ ] Generate a new [GUID](http://www.guidgenerator.com/), and update the _id_ attribute at */xml/keyboard_themes.xml*
+- Change package name in _AndroidManifest.xml_
+- Change the package (and folder name) of the Java class _KeyboardThemeReceiver.java_
+- Change the App name, theme name and description at _/values/strings.xml_
+- Generate a new [GUID](http://www.guidgenerator.com/), and update the _id_ attribute at */xml/keyboard_themes.xml*
 
 This was the easy part, mostly administration. Now, to the hard part - assets, dimensions, etc.
-The example (master) branch has the basic plumbing. I would suggest **deleting** all drawables which are not in the _drawable_ folder (e.i., _drawable-mdpi_, _drawable-hdpi_, etc), and add your own assets instead.
+The example (master) branch has the basic plumbing. I would suggest **deleting** all drawables which are not in the _drawable_ folder (e.i., _drawable-mdpi_, _drawable-hdpi_, etc), and add your own assets instead. This will ensure that you have all the required assets - the build will fail until all minimum assets are there.
 
 Flow the _ExampleAnyKeyboardTheme_ style (at _/values/styles.xml_) to fill the assets and dimensions for the layout. Notable mentions:
-- [ ] Add normal key assets: */drawable/btn_keyboard_key.xml*
-- [ ] Add popup keyboard key assets: */drawable/btn_keyboard_key_popup.xml*
-- [ ] Add key-feedback assets: */drawable/keyboard_key_feedback.xml*
+- Add normal key assets: */drawable/btn_keyboard_key.xml*
+- Add popup keyboard key assets: */drawable/btn_keyboard_key_popup.xml*
+- Add key-feedback assets: */drawable/keyboard_key_feedback.xml*
  
 And the _ExampleAnyKeyboardPopupTheme_ style.
 
 Follow the ExampleAnyKeyboardIconsTheme style (at _/values/styles.xml_) to fill the assets for the icons. Notable mentions:
-- [ ] Add _Action_ key assets: */drawable/key_action_set.xml*
-- [ ] Add _Shift_ key assets: */drawable/key_action_set.xml*
-- [ ] Add _Delete_ key assets: */drawable/key_action_set.xml*
-- [ ] Etc.
+- Add _Action_ key assets: */drawable/key_action_set.xml*
+- Add _Shift_ key assets: */drawable/key_action_set.xml*
+- Add _Delete_ key assets: */drawable/key_action_set.xml*
+- Etc.
 
 When all is done, you can try to build your project:
 ```gradle clean build```
