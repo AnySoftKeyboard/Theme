@@ -11,6 +11,7 @@ To-Do:
 - Change the package (and folder name) of the Java class _KeyboardThemeReceiver.java_
 - Change the App name, theme name and description at _/values/strings.xml_
 - Generate a new [GUID](http://www.guidgenerator.com/), and update the _id_ attribute at */xml/keyboard_themes.xml*
+- Change the *ic_launcher* to your liking.
 
 This was the easy part, mostly administration. Now, to the hard part - assets, dimensions, etc.
 The example (master) branch has the basic plumbing. I would suggest **deleting** all drawables which are not in the _drawable_ folder (e.i., _drawable-mdpi_, _drawable-hdpi_, etc), and add your own assets instead. This will ensure that you have all the required assets - the build will fail until all minimum assets are there.
@@ -35,7 +36,7 @@ Install the APK on your device:
 ```gradle installDebug```
 
 And test it. If you feel fine with that, take a screenshot:
-- [ ] Take a screenshot, and copy it to */drawable-nodpi/theme_screen_shot.png*. Don't forget to crop the screenshot to include only your layout (and not the enitre screen).
+- Take a screenshot, and copy it to */drawable-nodpi/theme_screen_shot.png*. Don't forget to crop the screenshot to include only your layout (and not the enitre screen).
 
 **GOOD LUCK**
 
