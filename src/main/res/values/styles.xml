@@ -29,6 +29,15 @@
 		<item name="iconKeySettings">@drawable/key_settings_set</item>
         <!-- should support normal, feedback -->
         <item name="iconKeyTab">@drawable/key_tab_set</item>
+
+        <!-- should support normal, feedback -->
+        <item name="iconKeyArrowRight">@drawable/dark_key_arrow_right_set</item>
+        <!-- should support normal, feedback -->
+        <item name="iconKeyArrowLeft">@drawable/dark_key_arrow_left_set</item>
+        <!-- should support normal, feedback -->
+        <item name="iconKeyArrowUp">@drawable/dark_key_arrow_up_set</item>
+        <!-- should support normal, feedback -->
+        <item name="iconKeyArrowDown">@drawable/dark_key_arrow_down_set</item>
 	</style>
     <style name="GingerbreadAnyKeyboardTheme">
         <item name="android:background">@drawable/keyboard_background</item>

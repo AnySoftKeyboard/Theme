@@ -52,8 +52,8 @@ android {
     defaultConfig {
         minSdkVersion 4
         targetSdkVersion 19
-        versionCode 1
-        versionName "1.0."+getVersionPatchBuild()
+        versionCode 2
+        versionName "1.1."+getVersionPatchBuild()
     }
 
     compileOptions {

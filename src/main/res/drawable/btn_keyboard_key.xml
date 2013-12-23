@@ -27,9 +27,9 @@
     <!-- Action keys. -->
 
     <item ask:key_type_action="true" android:state_pressed="true"
-          android:drawable="@drawable/btn_keyboard_key_pressed" />
-    <item ask:key_type_action="true" 
-          android:drawable="@drawable/btn_keyboard_key_normal" />
+        android:drawable="@drawable/btn_keyboard_key_action_pressed"/>
+    <item ask:key_type_action="true"
+        android:drawable="@drawable/btn_keyboard_key_action_normal"/>
 
     <!-- Toggle keys. Use checkable/checked state. -->
 
