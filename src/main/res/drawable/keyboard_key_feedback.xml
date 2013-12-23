@@ -16,6 +16,6 @@
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_long_pressable="true"
-            android:drawable="@drawable/keyboard_key_feedback_more_background_2" />
-    <item android:drawable="@drawable/keyboard_key_feedback_background_2" />
+            android:drawable="@drawable/keyboard_key_feedback_more_background" />
+    <item android:drawable="@drawable/keyboard_key_feedback_background" />
 </selector>
