@@ -26,6 +26,7 @@
 	<dimen name="default_key_horizontal_gap">3dp</dimen>
 	
 	<dimen name="key_text_size">24sp</dimen>
+    <dimen name="key_hint_text_size">11sp</dimen>
 	<dimen name="key_label_text_size">16sp</dimen>
     
 	<dimen name="candidate_strip_height">40dip</dimen>

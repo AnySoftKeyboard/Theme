@@ -38,6 +38,9 @@
         <item name="keyTextStyle">bold</item>
         <item name="keyTextColor">#FFFFFFFF</item>
         <item name="hintTextColor">#FF999999</item>
+        <item name="hintTextSize">@dimen/key_hint_text_size</item>
+        <item name="hintLabelAlign">right</item>
+        <item name="hintLabelVAlign">top</item>
         <item name="labelTextSize">@dimen/key_label_text_size</item>
         
         <item name="shadowColor">#BB000000</item>
@@ -46,7 +49,7 @@
         <item name="shadowOffsetY">0px</item>
         <item name="backgroundDimAmount">0.5</item>
         
-        <!-- key preview (feeback) -->
+        <!-- key preview (feedback) -->
         <item name="keyPreviewBackground">@drawable/keyboard_key_feedback</item>
     	<item name="keyPreviewTextColor">#FFFFFFFF</item>
     	<item name="keyPreviewTextSize">32sp</item>
@@ -71,5 +74,7 @@
     	<item name="keyBackground">@drawable/btn_keyboard_key_popup</item>
         <!-- this will say "no preview" -->
     	<item name="keyPreviewTextSize">0px</item>
+        <!-- no hints here -->
+        <item name="hintTextSize">0px</item>
     </style>
 </resources>
