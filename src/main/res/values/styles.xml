@@ -44,7 +44,7 @@
         <item name="labelTextSize">@dimen/key_label_text_size</item>
         
         <item name="shadowColor">#BB000000</item>
-        <item name="shadowRadius">0px</item>
+        <item name="shadowRadius">5dp</item>
         <item name="shadowOffsetX">0px</item>
         <item name="shadowOffsetY">0px</item>
         <item name="backgroundDimAmount">0.5</item>
