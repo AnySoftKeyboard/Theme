@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources>
-	<style name="ExampleAnyKeyboardIconsTheme">
+	<style name="GingerbreadAnyKeyboardIconsTheme">
 		<!-- should support normal, android:state_pressed, feedback, android:state_pressed+feedback, android:state_checked, state_checked+feedback -->
 		<item name="iconKeyShift">@drawable/key_shift_set</item>
 		<!-- should support normal, feedback -->
@@ -30,7 +30,7 @@
         <!-- should support normal, feedback -->
         <item name="iconKeyTab">@drawable/key_tab_set</item>
 	</style>
-    <style name="ExampleAnyKeyboardTheme">
+    <style name="GingerbreadAnyKeyboardTheme">
         <item name="android:background">@drawable/keyboard_background</item>
     	<item name="keyBackground">@drawable/btn_keyboard_key</item>
     	
@@ -66,7 +66,7 @@
 		<item name="keyHorizontalGap">@dimen/default_key_horizontal_gap</item>
 		<item name="keyVerticalGap">@dimen/default_key_vertical_gap</item>
     </style>
-    <style name="ExampleAnyKeyboardPopupTheme" parent="@style/ExampleAnyKeyboardTheme">
+    <style name="GingerbreadAnyKeyboardPopupTheme" parent="@style/GingerbreadAnyKeyboardTheme">
         <item name="android:background">@drawable/keyboard_popup_panel_background</item>
     	<item name="keyBackground">@drawable/btn_keyboard_key_popup</item>
         <!-- this will say "no preview" -->

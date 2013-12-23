@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.anysoftkeyboard.theme.example">
+    package="com.anysoftkeyboard.theme.gingerbread">
 
     <supports-screens
         android:xlargeScreens="true"
