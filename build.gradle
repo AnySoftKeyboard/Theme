@@ -3,10 +3,12 @@ import java.text.SimpleDateFormat
 
 buildscript {
     repositories {
-        mavenCentral()
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.7.+'
+        classpath 'com.android.tools.build:gradle:3.2.1'
     }
 }
 apply plugin: 'android'
@@ -16,7 +18,13 @@ repositories {
     mavenLocal()
 }
 
-
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
 
 def String getInputFromConsoleIfMissing(Properties props, String propKey, String propInputMessage) {
     def propValue = props[propKey]
@@ -46,12 +54,12 @@ def String getVersionPatchBuild() {
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.0.0"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
-        minSdkVersion 4
-        targetSdkVersion 19
+        minSdkVersion 7
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0."+getVersionPatchBuild()
     }
@@ -103,14 +111,14 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
-            zipAlign true
+            zipAlignEnabled true
 
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
 }
 
 dependencies {
-    compile 'net.evendanan.anysoftkeyboard:api:1.2.0@aar'
+    implementation 'com.github.AnySoftKeyboard:AnySoftKeyboard-API:1.9.0'
 }
