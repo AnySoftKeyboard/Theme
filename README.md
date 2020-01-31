@@ -1,3 +1,6 @@
+# deprecated
+Themes moved to the main [repository](https://github.com/AnySoftKeyboard/AnySoftKeyboard/tree/master/addons/themes).
+
 Theme
 =====
 
