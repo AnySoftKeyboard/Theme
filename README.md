@@ -39,7 +39,7 @@ Install the APK on your device:
 ```gradle installDebug```
 
 And test it. If you feel fine with that, take a screenshot:
-- Take a screenshot, and copy it to */drawable-nodpi/theme_screen_shot.png*. Don't forget to crop the screenshot to include only your layout (and not the enitre screen).
+- Take a screenshot, and copy it to */drawable-nodpi/theme_screen_shot.png*. Don't forget to crop the screenshot to include only your layout (and not the entire screen).
 
 **GOOD LUCK**
 
